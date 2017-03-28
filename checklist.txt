@@ -1,0 +1,83 @@
+---------------MAIN DIRECTORY CHECKLIST------------
+project.json **!first thing!** ++
+    restore+
+startup.cs
+    namespace +
+    context string +
+    models name +
+appsettings.json+
+    database name +
+------------------MODELS CHECKLIST -----------------
+Models directory folder +
+Context.cs +
+    namespace +
+    schema references !!
+BaseEntity.cs +
+    namespace +
+RegisterViewModel.cs +
+    namespace +
+User.cs +
+    namespace +
+    list joined +
+    list created +
+Stuff.cs
+    Title 2 char +
+    date start in the futrue +
+    time start +
+    date end  +
+    time end +
+    Description min lnegth 10 char 
+    participants List<User> +
+    created at +
+    updated at+
+    creator User single user reference +
+    UserId +
+StuffViewModel.cs
+    inthefuture reference
+Utilities folder
+    inthefuture custome attribute
+-----------------CONTROLLER CHECKLIST-----------
+UserController.cs +
+    contextname--2 places +
+    createdt at +
+    updatetd at +
+DashController.cs +
+    Show All activities
+    redirects to showone
+    handles deletion
+    handles joins
+    handles leaves
+    
+-----------------VIEW CHECKLIST---------------
+User dir folder
+Index.cshtml +
+    @namespace +
+    add resgister.cshtml to login validations page +
+    delete Register.cshtml +
+    @namespace +
+    viewbag.nexterror replacement for register unique errors +
+viewallactivities.cshtml--Dash.cshtml
+    see all activity
+    logout button
+    events in the past shold not be shown
+    events displayed most recent at top
+    ability to join or leave an activity
+    ability to delete activities you created--three options to toglle between join if not participant, leave if participant and not creator, delete if joined and creator
+    activity title is a link
+    can not join an activity of other activity has conflicting time including duration
+    add activity button take you to new activity page
+create.cshtml
+    title minlength 2 char
+    date/time in the future
+    description is a min of 10 char
+    duration estimated lenbght of time switches between hours minutes and days
+    create activy submit button directs to specified activity page
+viewone.cshtml
+    ability to leave or join
+    can delete it if you created it
+    all other partcipating users listed
+    coordianotr is not under participants listed
+
+
+
+

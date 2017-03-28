@@ -1,0 +1,28 @@
+<div>   
+    <h1>    Dojo Activity Center</h1>
+    <h1>@ViewBag.Activity.Title</h1>
+    <a href="/dashboard">Home</a>
+    <form action="Logout" method="post">
+    <input type="submit" value="Logout">
+</form>
+
+    <h3> Event Coordinator: @ViewBag.Activity.Creator.FirstName</h3>
+    <form action="/@ViewBag.Activity.Action/@ViewBag.Activity.ActId" method="Post">
+        <input type="Submit" value="@ViewBag.Activity.Action">
+    </form>
+    <h3>Description</h3>
+    <p> 
+        @ViewBag.Activity.Desc
+    </p>
+    <h3>    Participants</h3>
+    <p>
+        @{
+            foreach (var join in @ViewBag.Joins)
+            {
+                if(@join.User.UserId != @ViewBag.Activity.CreatorId){
+                <p> @join.User.FirstName</p>
+            }
+            }
+        }
+    </p>
+</div>

@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "Home";
+}
+<h1>    Dojo Activity Center</h1>
+
+<form action="Logout" method="post">
+    <input type="submit" value="Logout">
+</form>
+welcome @ViewBag.UserName
+<h5>@ViewBag.NewError</h5>
+<table class= table> 
+    <tr>    
+        <th>Activity</th>
+        <th>Date and Time</th>
+        <th>Duration</th>
+        <th>Event Coordinator</th>
+        <th>Number of Participants</th>
+        <th>Actions</th>
+    </tr>
+    @{
+        foreach(var act in @ViewBag.Activities)
+        {
+            <tr>
+                <td><a href="/activity/@act.ActId">@act.Title</a></td>
+                <td>@act.DateStart</td>
+                <td>@act.Duration @act.Units</td>
+                <td>@act.Creator.FirstName</td>
+                <td>@act.Going.Count</td>
+                <td>
+                    <form action="@act.Action/@act.ActId" method="Post">
+                    <input style="background: none;border:none;color:#337ab7" type="Submit" value="@act.Action">
+                    </form>
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<h3><a href="/New">Add New</a></h3>

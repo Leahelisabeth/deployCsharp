@@ -1,0 +1,8 @@
+@model dojoPrep.Models.User
+<h1>Login</h1>
+<form asp-controller="User" asp-action="Login" method="post">
+    <br><label for="Email1">Email:</label><input id="Email1" type="text" name="Email">
+    <br><label for="Password1">Password:</label><input id="Password1 type="text" name="Password">
+    <br><input type="submit" value="submit">
+</form>
+<p style="color: red">@ViewBag.NewError</p>

@@ -1,0 +1,36 @@
+@model dojoPrep.Models.ActivityViewModel
+
+<div>   
+    <h1>    Dojo Activity Center</h1>
+        <a href="/dashboard">Home</a>
+    <form action="Logout" method="post">
+    <input type="submit" value="Logout">
+</form>
+    <p>@ViewBag.NewError</p>
+    <form asp-controller="Dash" asp-action="CreateNew" method="post">
+        <br><label asp-for="Title">Title:</label><input id="Title" type="text" asp-for="Title">
+        <span asp-validation-for="Title"></span>
+
+        <br><label asp-for="TimeStart">Time:</label><input id="TimeStart" type="time" asp-for="TimeStart">
+        <span asp-validation-for="TimeStart"></span>
+
+        <br><label asp-for="DateStart">Date:</label><input id="DateStart" type="date" asp-for="DateStart">
+        <span asp-validation-for="DateStart"></span>
+
+        <br><label asp-for="Duration">Duration:</label><input id="Duration" type="number" min="1" asp-for="Duration">
+        <span asp-validation-for="Duration"></span>
+
+        <br><label asp-for="Units"></label><select asp-for="Units" id="Units">
+            <option value="Days">Days</option>
+            <option value="Hours">Hours</option>
+            <option value="Minutes">Minutes</option>
+        </select>
+        <span asp-validation-for="Units"></span>
+
+        <br><label asp-for="Desc">Description:</label><textarea id="Desc" asp-for="Desc"></textarea>
+        <span asp-validation-for="Desc"></span>
+        
+        <br><input type="submit" value="Create">
+
+    </form>
+</div>
